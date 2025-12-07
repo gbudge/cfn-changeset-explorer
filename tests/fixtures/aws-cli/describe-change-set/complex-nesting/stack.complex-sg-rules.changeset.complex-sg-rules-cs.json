@@ -1,0 +1,53 @@
+{
+    "Changes": [
+        { 
+            "Type": "Resource", 
+            "ResourceChange": { 
+                "Action": "Modify", 
+                "LogicalResourceId": "Rule1", 
+                "ResourceType": "AWS::EC2::SecurityGroupIngress", 
+                "Details": [{"Target": {"Attribute": "Properties", "Name": "CidrIp"}, "Evaluation": "Static"}] 
+            }
+        },
+        { 
+            "Type": "Resource", 
+            "ResourceChange": { 
+                "Action": "Add", 
+                "LogicalResourceId": "Rule2", 
+                "ResourceType": "AWS::EC2::SecurityGroupIngress"
+            }
+        },
+        { 
+            "Type": "Resource", 
+            "ResourceChange": { 
+                "Action": "Add", 
+                "LogicalResourceId": "Rule3", 
+                "ResourceType": "AWS::EC2::SecurityGroupIngress"
+            }
+        },
+        { 
+            "Type": "Resource", 
+            "ResourceChange": { 
+                "Action": "Add", 
+                "LogicalResourceId": "Rule4", 
+                "ResourceType": "AWS::EC2::SecurityGroupEgress"
+            }
+        },
+        { 
+            "Type": "Resource", 
+            "ResourceChange": { 
+                "Action": "Remove", 
+                "LogicalResourceId": "OldRule5", 
+                "ResourceType": "AWS::EC2::SecurityGroupEgress"
+            }
+        }
+    ],
+    "ChangeSetName": "complex-sg-rules-cs",
+    "ChangeSetId": "arn:aws:cloudformation:us-west-2:123456789012:changeSet/complex-sg-rules-cs/40000000-0000-0000-0000-000000000000",
+    "StackName": "complex-sg-rules",
+    "StackId": "arn:aws:cloudformation:us-west-2:123456789012:stack/complex-sg-rules/44444444-4444-4444-4444-444444444444",
+    "ParentChangeSetId": "arn:aws:cloudformation:us-west-2:123456789012:changeSet/complex-root-cs/00000000-0000-0000-0000-000000000000",
+    "RootChangeSetId": "arn:aws:cloudformation:us-west-2:123456789012:changeSet/complex-root-cs/00000000-0000-0000-0000-000000000000",
+    "Status": "CREATE_COMPLETE",
+    "ExecutionStatus": "UNAVAILABLE"
+}

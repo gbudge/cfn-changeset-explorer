@@ -1,0 +1,28 @@
+{
+    "Changes": [
+        { 
+            "Type": "Resource", 
+            "ResourceChange": { 
+                "Action": "Add", 
+                "LogicalResourceId": "MyNacl", 
+                "ResourceType": "AWS::EC2::NetworkAcl"
+            }
+        },
+        { 
+            "Type": "Resource", 
+            "ResourceChange": { 
+                "Action": "Add", 
+                "LogicalResourceId": "MyNaclEntry", 
+                "ResourceType": "AWS::EC2::NetworkAclEntry"
+            }
+        }
+    ],
+    "ChangeSetName": "complex-nacl-cs",
+    "ChangeSetId": "arn:aws:cloudformation:us-west-2:123456789012:changeSet/complex-nacl-cs/50000000-0000-0000-0000-000000000000",
+    "StackName": "complex-nacl",
+    "StackId": "arn:aws:cloudformation:us-west-2:123456789012:stack/complex-nacl/55555555-5555-5555-5555-555555555555",
+    "ParentChangeSetId": "arn:aws:cloudformation:us-west-2:123456789012:changeSet/complex-root-cs/00000000-0000-0000-0000-000000000000",
+    "RootChangeSetId": "arn:aws:cloudformation:us-west-2:123456789012:changeSet/complex-root-cs/00000000-0000-0000-0000-000000000000",
+    "Status": "CREATE_COMPLETE",
+    "ExecutionStatus": "UNAVAILABLE"
+}

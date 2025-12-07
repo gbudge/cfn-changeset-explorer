@@ -1,0 +1,42 @@
+{
+    "Changes": [
+        { 
+            "Type": "Resource", 
+            "ResourceChange": { 
+                "Action": "Modify", 
+                "LogicalResourceId": "App1SGs", 
+                "PhysicalResourceId": "arn:aws:cloudformation:us-west-2:123456789012:stack/complex-sg-app1/11111111-1111-1111-1111-111111111111",
+                "ResourceType": "AWS::CloudFormation::Stack", 
+                "ChangeSetId": "arn:aws:cloudformation:us-west-2:123456789012:changeSet/complex-sg-app1-cs/31000000-0000-0000-0000-000000000000"
+            }
+        },
+        { 
+            "Type": "Resource", 
+            "ResourceChange": { 
+                "Action": "Modify", 
+                "LogicalResourceId": "App2SGs", 
+                "PhysicalResourceId": "arn:aws:cloudformation:us-west-2:123456789012:stack/complex-sg-app2/22222222-2222-2222-2222-222222222222",
+                "ResourceType": "AWS::CloudFormation::Stack", 
+                "ChangeSetId": "arn:aws:cloudformation:us-west-2:123456789012:changeSet/complex-sg-app2-cs/32000000-0000-0000-0000-000000000000"
+            }
+        },
+        { 
+            "Type": "Resource", 
+            "ResourceChange": { 
+                "Action": "Modify", 
+                "LogicalResourceId": "App3SGs", 
+                "PhysicalResourceId": "arn:aws:cloudformation:us-west-2:123456789012:stack/complex-sg-app3/33333333-3333-3333-3333-333333333333",
+                "ResourceType": "AWS::CloudFormation::Stack", 
+                "ChangeSetId": "arn:aws:cloudformation:us-west-2:123456789012:changeSet/complex-sg-app3-cs/33000000-0000-0000-0000-000000000000"
+            }
+        }
+    ],
+    "ChangeSetName": "complex-sg-cs",
+    "ChangeSetId": "arn:aws:cloudformation:us-west-2:123456789012:changeSet/complex-sg-cs/30000000-0000-0000-0000-000000000000",
+    "StackName": "complex-security-groups",
+    "StackId": "arn:aws:cloudformation:us-west-2:123456789012:stack/complex-security-groups/FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF",
+    "ParentChangeSetId": "arn:aws:cloudformation:us-west-2:123456789012:changeSet/complex-root-cs/00000000-0000-0000-0000-000000000000",
+    "RootChangeSetId": "arn:aws:cloudformation:us-west-2:123456789012:changeSet/complex-root-cs/00000000-0000-0000-0000-000000000000",
+    "Status": "CREATE_COMPLETE",
+    "ExecutionStatus": "UNAVAILABLE"
+}

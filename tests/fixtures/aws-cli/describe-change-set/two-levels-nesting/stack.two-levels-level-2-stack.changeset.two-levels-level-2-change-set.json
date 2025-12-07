@@ -1,0 +1,39 @@
+{
+    "Changes": [
+        {
+            "Type": "Resource",
+            "ResourceChange": {
+                "Action": "Modify",
+                "LogicalResourceId": "MyTopic",
+                "PhysicalResourceId": "two-levels-level-2-topic",
+                "ResourceType": "AWS::SNS::Topic",
+                "Replacement": "False",
+                "Scope": [
+                    "Properties"
+                ],
+                "Details": [
+                    {
+                        "Target": {
+                            "Attribute": "Properties",
+                            "Name": "DisplayName",
+                            "RequiresRecreation": "Never"
+                        },
+                        "Evaluation": "Static",
+                        "ChangeSource": "DirectModification"
+                    }
+                ]
+            }
+        }
+    ],
+    "ChangeSetName": "two-levels-level-2-change-set",
+    "ChangeSetId": "arn:aws:cloudformation:us-west-2:123456789012:changeSet/two-levels-level-2-change-set/cccccccc-e285-xmpl-8026-9a1967bfb4b0",
+    "StackId": "arn:aws:cloudformation:us-west-2:123456789012:stack/two-levels-level-2-stack/ffffffff-e4cd-xmpl-b9fb-061c69e99206",
+    "StackName": "two-levels-level-2-stack",
+    "ParentChangeSetId": "arn:aws:cloudformation:us-west-2:123456789012:changeSet/two-levels-level-1-change-set/bbbbbbbb-e285-xmpl-8026-9a1967bfb4b0",
+    "RootChangeSetId": "arn:aws:cloudformation:us-west-2:123456789012:changeSet/two-levels-root-change-set/aaaaaaaa-e285-xmpl-8026-9a1967bfb4b0",
+    "IncludeNestedStacks": true,
+    "ExecutionStatus": "UNAVAILABLE",
+    "Status": "CREATE_COMPLETE",
+    "StatusReason": "Executable from root change set",
+    "Capabilities": []
+}

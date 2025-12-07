@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=61.0", "build"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cfn-changeset-explorer"
+version = "1.0.0"
+authors = [
+  { name="Gareth Budge", email="nah" },
+]
+description = "A tool to visualise AWS CloudFormation change sets"
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "boto3",
+    "pyyaml",
+    "rich",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "pytest-cov",
+]
+
+[project.scripts]
+cfn-changeset-explorer = "cfn_changeset_explorer.main:main"

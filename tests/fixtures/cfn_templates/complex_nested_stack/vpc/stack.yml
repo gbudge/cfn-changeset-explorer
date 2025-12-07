@@ -1,0 +1,26 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Complex nested CloudFormation stack for tests/fixtures with multiple nested levels
+
+Resources:
+  NetworkStack:
+    Type: AWS::CloudFormation::Stack
+    Properties:
+      TemplateURL: ./network-stack.yml
+      TimeoutInMinutes: 10
+
+Outputs:
+  IAMRoleArn:
+    Description: ARN of IAM role created in IAMStack
+    Value: !GetAtt IAMStack.Outputs.IAMRoleArn
+
+  VpcId:
+    Description: VPC ID from NetworkStack
+    Value: !GetAtt NetworkStack.Outputs.VpcId
+
+  SecurityGroupId:
+    Description: Security Group ID from SecurityStack
+    Value: !GetAtt SecurityStack.Outputs.SecurityGroupId
+
+  ParameterName:
+    Description: SSM Parameter name from SSMStack
+    Value: !GetAtt SSMStack.Outputs.ParamName

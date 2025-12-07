@@ -1,0 +1,15 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Simple nested stack that deploys a nested lambda stack
+
+Resources:
+  ChildStack:
+    Type: AWS::CloudFormation::Stack
+    Properties:
+      TemplateURL: ./compute/nested-lambda-stack.yml
+      Parameters:
+        MemorySize: 128
+
+Outputs:
+  ChildLambdaArn:
+    Description: ARN from nested stack
+    Value: !GetAtt ChildStack.Outputs.LambdaArn

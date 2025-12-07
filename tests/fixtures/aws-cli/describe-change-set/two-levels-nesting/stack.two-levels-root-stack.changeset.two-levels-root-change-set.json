@@ -1,0 +1,38 @@
+{
+    "Changes": [
+        {
+            "Type": "Resource",
+            "ResourceChange": {
+                "Action": "Modify",
+                "LogicalResourceId": "Level1ChildStack",
+                "PhysicalResourceId": "arn:aws:cloudformation:us-west-2:123456789012:stack/two-levels-level-1-stack/dddddddd-e4cd-xmpl-b9fb-061c69e99205",
+                "ResourceType": "AWS::CloudFormation::Stack",
+                "Replacement": "False",
+                "ChangeSetId": "arn:aws:cloudformation:us-west-2:123456789012:changeSet/two-levels-level-1-change-set/bbbbbbbb-e285-xmpl-8026-9a1967bfb4b0",
+                "Scope": [
+                    "Properties"
+                ],
+                "Details": [
+                    {
+                        "Target": {
+                            "Attribute": "Properties",
+                            "RequiresRecreation": "Never"
+                        },
+                        "Evaluation": "Dynamic",
+                        "ChangeSource": "Automatic"
+                    }
+                ]
+            }
+        }
+    ],
+    "ChangeSetName": "two-levels-root-change-set",
+    "ChangeSetId": "arn:aws:cloudformation:us-west-2:123456789012:changeSet/two-levels-root-change-set/aaaaaaaa-e285-xmpl-8026-9a1967bfb4b0",
+    "StackId": "arn:aws:cloudformation:us-west-2:123456789012:stack/two-levels-root-stack/eeeeeeee-e4cd-xmpl-b9fb-061c69e99204",
+    "StackName": "two-levels-root-stack",
+    "IncludeNestedStacks": true,
+    "ParentChangeSetId": null,
+    "RootChangeSetId": null,
+    "ExecutionStatus": "AVAILABLE",
+    "Status": "CREATE_COMPLETE",
+    "Capabilities": ["CAPABILITY_IAM"]
+}

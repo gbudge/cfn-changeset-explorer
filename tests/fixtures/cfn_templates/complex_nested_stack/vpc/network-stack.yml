@@ -1,0 +1,32 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Network nested stack — creates a VPC and delegates subnets and NACLs to nested stacks
+
+Resources:
+  Vpc:
+    Type: AWS::EC2::VPC
+    Properties:
+      CidrBlock: 10.0.0.0/16
+      EnableDnsSupport: true
+      EnableDnsHostnames: true
+      Tags:
+        - Key: Name
+          Value: !Sub "${AWS::StackName}-vpc"
+
+  SubnetStack:
+    Type: AWS::CloudFormation::Stack
+    Properties:
+      TemplateURL: ./subnet-stack.yml
+      Parameters:
+        VpcId: !Ref Vpc
+
+  NaclStack:
+    Type: AWS::CloudFormation::Stack
+    Properties:
+      TemplateURL: ./nacl-stack.yml
+      Parameters:
+        VpcId: !Ref Vpc
+
+Outputs:
+  VpcId:
+    Description: VPC id created by this stack
+    Value: !Ref Vpc

@@ -1,0 +1,28 @@
+{
+    "Changes": [
+        { 
+            "Type": "Resource", 
+            "ResourceChange": { 
+                "Action": "Add", 
+                "LogicalResourceId": "App1SG1", 
+                "ResourceType": "AWS::EC2::SecurityGroup"
+            }
+        },
+        { 
+            "Type": "Resource", 
+            "ResourceChange": { 
+                "Action": "Add", 
+                "LogicalResourceId": "App1SG2", 
+                "ResourceType": "AWS::EC2::SecurityGroup"
+            }
+        }
+    ],
+    "ChangeSetName": "complex-sg-app1-cs",
+    "ChangeSetId": "arn:aws:cloudformation:us-west-2:123456789012:changeSet/complex-sg-app1-cs/31000000-0000-0000-0000-000000000000",
+    "StackName": "complex-sg-app1",
+    "StackId": "arn:aws:cloudformation:us-west-2:123456789012:stack/complex-sg-app1/11111111-1111-1111-1111-111111111111",
+    "ParentChangeSetId": "arn:aws:cloudformation:us-west-2:123456789012:changeSet/complex-sg-cs/30000000-0000-0000-0000-000000000000",
+    "RootChangeSetId": "arn:aws:cloudformation:us-west-2:123456789012:changeSet/complex-root-cs/00000000-0000-0000-0000-000000000000",
+    "Status": "CREATE_COMPLETE",
+    "ExecutionStatus": "UNAVAILABLE"
+}

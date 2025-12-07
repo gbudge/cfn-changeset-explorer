@@ -1,0 +1,62 @@
+{
+    "Changes": [
+        {
+            "Type": "Resource",
+            "ResourceChange": {
+                "Action": "Modify",
+                "LogicalResourceId": "IAMStack",
+                "PhysicalResourceId": "arn:aws:cloudformation:us-west-2:123456789012:stack/complex-iam/BBBBBBBB-BBBB-BBBB-BBBB-BBBBBBBBBBBB",
+                "ResourceType": "AWS::CloudFormation::Stack",
+                "ChangeSetId": "arn:aws:cloudformation:us-west-2:123456789012:changeSet/complex-iam-cs/10000000-0000-0000-0000-000000000000"
+            }
+        },
+        {
+            "Type": "Resource",
+            "ResourceChange": {
+                "Action": "Modify",
+                "LogicalResourceId": "SSMStack",
+                "PhysicalResourceId": "arn:aws:cloudformation:us-west-2:123456789012:stack/complex-ssm/EEEEEEEE-EEEE-EEEE-EEEE-EEEEEEEEEEEE",
+                "ResourceType": "AWS::CloudFormation::Stack",
+                "ChangeSetId": "arn:aws:cloudformation:us-west-2:123456789012:changeSet/complex-ssm-cs/20000000-0000-0000-0000-000000000000"
+            }
+        },
+        {
+            "Type": "Resource",
+            "ResourceChange": {
+                "Action": "Modify",
+                "LogicalResourceId": "SecurityGroupsStack",
+                "PhysicalResourceId": "arn:aws:cloudformation:us-west-2:123456789012:stack/complex-security-groups/FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF",
+                "ResourceType": "AWS::CloudFormation::Stack",
+                "ChangeSetId": "arn:aws:cloudformation:us-west-2:123456789012:changeSet/complex-sg-cs/30000000-0000-0000-0000-000000000000"
+            }
+        },
+        {
+            "Type": "Resource",
+            "ResourceChange": {
+                "Action": "Modify",
+                "LogicalResourceId": "SecurityGroupRulesStack",
+                "PhysicalResourceId": "arn:aws:cloudformation:us-west-2:123456789012:stack/complex-sg-rules/44444444-4444-4444-4444-444444444444",
+                "ResourceType": "AWS::CloudFormation::Stack",
+                "ChangeSetId": "arn:aws:cloudformation:us-west-2:123456789012:changeSet/complex-sg-rules-cs/40000000-0000-0000-0000-000000000000"
+            }
+        },
+        {
+            "Type": "Resource",
+            "ResourceChange": {
+                "Action": "Modify",
+                "LogicalResourceId": "NetworkACLsStack",
+                "PhysicalResourceId": "arn:aws:cloudformation:us-west-2:123456789012:stack/complex-nacl/55555555-5555-5555-5555-555555555555",
+                "ResourceType": "AWS::CloudFormation::Stack",
+                "ChangeSetId": "arn:aws:cloudformation:us-west-2:123456789012:changeSet/complex-nacl-cs/50000000-0000-0000-0000-000000000000"
+            }
+        }
+    ],
+    "ChangeSetName": "complex-root-cs",
+    "ChangeSetId": "arn:aws:cloudformation:us-west-2:123456789012:changeSet/complex-root-cs/00000000-0000-0000-0000-000000000000",
+    "StackName": "complex-root",
+    "StackId": "arn:aws:cloudformation:us-west-2:123456789012:stack/complex-root/AAAAAAAA-AAAA-AAAA-AAAA-AAAAAAAAAAAA",
+    "ParentChangeSetId": null,
+    "RootChangeSetId": null,
+    "Status": "CREATE_COMPLETE",
+    "ExecutionStatus": "AVAILABLE"
+}

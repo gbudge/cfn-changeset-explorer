@@ -1,0 +1,42 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Policies nested stack — attaches inline and managed policies to a role
+
+Parameters:
+  RoleName:
+    Type: String
+    Description: Name of the IAM role to attach policies to
+
+Resources:
+  InlinePolicy:
+    Type: AWS::IAM::Policy
+    Properties:
+      PolicyName: !Sub "${RoleName}-inline-policy"
+      Roles:
+        - !Ref RoleName
+      PolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Action:
+              - s3:ListBucket
+            Resource: "*"
+
+  AttachManagedPolicy:
+    Type: AWS::IAM::ManagedPolicy
+    Properties:
+      ManagedPolicyName: !Sub "${RoleName}-managed-policy"
+      Description: Managed policy for tests
+      PolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Action:
+              - logs:CreateLogGroup
+              - logs:CreateLogStream
+              - logs:PutLogEvents
+            Resource: "*"
+
+Outputs:
+  PolicyName:
+    Description: Name of managed policy
+    Value: !Ref AttachManagedPolicy

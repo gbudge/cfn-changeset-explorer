@@ -1,0 +1,23 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: SSM nested stack — creates parameters and delegates secure values to another nested stack
+
+Resources:
+  AppConfigParameter:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/tests/${AWS::StackName}/app/config"
+      Description: "Test parameter for application config"
+      Type: String
+      Value: '{"env":"test","featureX":true}'
+
+  SecureParametersStack:
+    Type: AWS::CloudFormation::Stack
+    Properties:
+      TemplateURL: ./secure-parameters-stack.yml
+      Parameters:
+        BaseName: !Ref AWS::StackName
+
+Outputs:
+  ParamName:
+    Description: Name of the primary SSM parameter
+    Value: !Ref AppConfigParameter

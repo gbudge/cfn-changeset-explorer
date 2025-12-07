@@ -1,0 +1,31 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Extra security rules nested stack — adds high-range ephemeral and ICMP rules
+
+Parameters:
+  SecurityGroupId:
+    Type: String
+    Description: Security Group id to attach rules to
+
+Resources:
+  AllowEphemeralIngress:
+    Type: AWS::EC2::SecurityGroupIngress
+    Properties:
+      GroupId: !Ref SecurityGroupId
+      IpProtocol: tcp
+      FromPort: 1024
+      ToPort: 65535
+      CidrIp: 0.0.0.0/0
+
+  AllowICMPIngress:
+    Type: AWS::EC2::SecurityGroupIngress
+    Properties:
+      GroupId: !Ref SecurityGroupId
+      IpProtocol: icmp
+      FromPort: -1
+      ToPort: -1
+      CidrIp: 0.0.0.0/0
+
+Outputs:
+  ExtraRuleCount:
+    Description: Number of extra rules created
+    Value: "2"

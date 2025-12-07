@@ -1,0 +1,30 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Security nested stack — creates security groups and nested rules stack for complex rules
+
+Parameters:
+  VpcId:
+    Type: String
+    Default: vpc-123456
+    Description: VPC id to associate the security group with
+
+Resources:
+  BaseSecurityGroup:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: Security group for tests
+      VpcId: !Ref VpcId
+      Tags:
+        - Key: Name
+          Value: !Sub "${AWS::StackName}-sg"
+
+  SecurityRulesStack:
+    Type: AWS::CloudFormation::Stack
+    Properties:
+      TemplateURL: ./security-rules-stack.yml
+      Parameters:
+        SecurityGroupId: !Ref BaseSecurityGroup
+
+Outputs:
+  SecurityGroupId:
+    Description: Security Group id created by this stack
+    Value: !Ref BaseSecurityGroup

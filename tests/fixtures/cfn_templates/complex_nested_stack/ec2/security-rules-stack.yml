@@ -1,0 +1,45 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Security rules nested stack — attaches ingress/egress rules and delegates additional rules to another nested stack
+
+Parameters:
+  SecurityGroupId:
+    Type: String
+    Description: Security Group id to attach rules to
+
+Resources:
+  AllowHTTPIngress:
+    Type: AWS::EC2::SecurityGroupIngress
+    Properties:
+      GroupId: !Ref SecurityGroupId
+      IpProtocol: tcp
+      FromPort: 80
+      ToPort: 80
+      CidrIp: 0.0.0.0/0
+
+  AllowSSHIngress:
+    Type: AWS::EC2::SecurityGroupIngress
+    Properties:
+      GroupId: !Ref SecurityGroupId
+      IpProtocol: tcp
+      FromPort: 22
+      ToPort: 22
+      CidrIp: 203.0.113.0/24
+
+  AllowAllEgress:
+    Type: AWS::EC2::SecurityGroupEgress
+    Properties:
+      GroupId: !Ref SecurityGroupId
+      IpProtocol: -1
+      CidrIp: 0.0.0.0/0
+
+  ExtraRulesStack:
+    Type: AWS::CloudFormation::Stack
+    Properties:
+      TemplateURL: ./extra-rules-stack.yml
+      Parameters:
+        SecurityGroupId: !Ref SecurityGroupId
+
+Outputs:
+  RulesStackId:
+    Description: Nested stack id for extra rules
+    Value: !Ref ExtraRulesStack

@@ -1,0 +1,38 @@
+{
+    "Changes": [
+        {
+            "Type": "Resource",
+            "ResourceChange": {
+                "Action": "Modify",
+                "LogicalResourceId": "NestedStack",
+                "PhysicalResourceId": "arn:aws:cloudformation:us-west-2:123456789012:stack/single-level-nested-stack/44444444-e4cd-xmpl-b9fb-061c69e99205",
+                "ResourceType": "AWS::CloudFormation::Stack",
+                "Replacement": "False",
+                "ChangeSetId": "arn:aws:cloudformation:us-west-2:123456789012:changeSet/single-level-nested-change-set/33333333-e285-xmpl-8026-9a1967bfb4b0",
+                "Scope": [
+                    "Properties"
+                ],
+                "Details": [
+                    {
+                        "Target": {
+                            "Attribute": "Properties",
+                            "RequiresRecreation": "Never"
+                        },
+                        "Evaluation": "Dynamic",
+                        "ChangeSource": "Automatic"
+                    }
+                ]
+            }
+        }
+    ],
+    "ChangeSetName": "single-level-root-change-set",
+    "ChangeSetId": "arn:aws:cloudformation:us-west-2:123456789012:changeSet/single-level-root-change-set/55555555-e285-xmpl-8026-9a1967bfb4b0",
+    "StackId": "arn:aws:cloudformation:us-west-2:123456789012:stack/single-level-root-stack/66666666-e4cd-xmpl-b9fb-061c69e99204",
+    "StackName": "single-level-root-stack",
+    "IncludeNestedStacks": true,
+    "ParentChangeSetId": null,
+    "RootChangeSetId": null,
+    "ExecutionStatus": "AVAILABLE",
+    "Status": "CREATE_COMPLETE",
+    "Capabilities": ["CAPABILITY_IAM"]
+}

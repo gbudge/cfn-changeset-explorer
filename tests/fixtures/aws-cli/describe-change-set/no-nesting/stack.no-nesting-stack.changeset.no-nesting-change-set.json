@@ -1,0 +1,40 @@
+{
+    "Changes": [
+        {
+            "Type": "Resource",
+            "ResourceChange": {
+                "Action": "Modify",
+                "LogicalResourceId": "MyBucket",
+                "PhysicalResourceId": "no-nesting-bucket",
+                "ResourceType": "AWS::S3::Bucket",
+                "Replacement": "False",
+                "Scope": [
+                    "Properties"
+                ],
+                "Details": [
+                    {
+                        "Target": {
+                            "Attribute": "Properties",
+                            "Name": "BucketName",
+                            "RequiresRecreation": "True"
+                        },
+                        "Evaluation": "Static",
+                        "ChangeSource": "DirectModification"
+                    }
+                ]
+            }
+        }
+    ],
+    "ChangeSetName": "no-nesting-change-set",
+    "ChangeSetId": "arn:aws:cloudformation:us-west-2:123456789012:changeSet/no-nesting-change-set/11111111-e285-xmpl-8026-9a1967bfb4b0",
+    "StackId": "arn:aws:cloudformation:us-west-2:123456789012:stack/no-nesting-stack/22222222-e4cd-xmpl-b9fb-061c69e99205",
+    "StackName": "no-nesting-stack",
+    "IncludeNestedStacks": true,
+    "ParentChangeSetId": null,
+    "RootChangeSetId": null,
+    "ExecutionStatus": "AVAILABLE",
+    "Status": "CREATE_COMPLETE",
+    "Capabilities": [
+        "CAPABILITY_IAM"
+    ]
+}

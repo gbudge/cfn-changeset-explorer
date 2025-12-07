@@ -1,0 +1,32 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: IAM nested stack — creates a base role and delegates policy attachments to a nested policies stack
+
+Parameters:
+  RoleName:
+    Type: String
+    Description: Name of the IAM role to create
+    Default: 'MySuperFunRole'
+
+Resources:
+  RoleStack:
+    Type: AWS::CloudFormation::Stack
+    Properties:
+      TemplateURL: ./roles.yml
+      Parameters:
+        RoleName: !Ref RoleName
+
+  PoliciesStack:
+    Type: AWS::CloudFormation::Stack
+    Properties:
+      TemplateURL: ./policies.yml
+      Parameters:
+        RoleName: !Ref RoleName
+
+Outputs:
+  IAMRoleArn:
+    Description: ARN of the created IAM role
+    Value: !GetAtt RoleStack.Outputs.RoleArn
+
+  PolicyName:
+    Description: Name of the managed policy created in PoliciesStack
+    Value: !GetAtt PoliciesStack.Outputs.PolicyName
