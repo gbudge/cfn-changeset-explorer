@@ -16,8 +16,8 @@ A tool query AWS CloudFormation ChangeSets and visualise it various formats.
 ## Installation
 
 ```bash
-git clone https://github.com/gbudge/cfn-describe-changeset
-cd cfn-describe-changeset
+git clone https://github.com/gbudge/cfn-changeset-explorer
+cd cfn-changeset-explorer
 pip install .
 ```
 
@@ -28,7 +28,13 @@ pip install .
 
 ```bash
 user@vm:~/cfn-changeset-explorer $ ./cfn_changeset_explorer.sh --help
-usage: main.py [-h] --stack-name NAME --cs-name NAME [--region REGION] [--output FORMAT] [--no-nested] [--mocked-json PATH]
+usage: main.py [-h] \
+  --stack-name NAME \
+  --cs-name NAME \
+  [--region REGION] \
+  [--output FORMAT] \
+  [--no-nested] \
+  [--mocked-json PATH]
 
 Visualise AWS CloudFormation change sets in various formats.
 
