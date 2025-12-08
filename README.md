@@ -51,7 +51,7 @@ user@vm:~/cfn-changeset-explorer $
 
 ## Demonstration
 
-See the [docs/DEMO.md](docs/DEMO.md) file for examples of each format.
+See the [examples](docs/EXAMPLES.md) for some examples of each format.
 
 ## License
 
